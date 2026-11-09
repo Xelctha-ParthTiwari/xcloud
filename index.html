@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>X-Cloud</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ SECURITY GATE ============ -->
+  <section id="gate" class="gate" aria-live="polite">
+    <div class="gate-card">
+      <div class="gate-brand">X-Cloud</div>
+      <div class="gate-steps" id="gateDots">
+        <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+
+      <!-- Screen 1: The Question -->
+      <div class="gate-screen" id="screen1">
+        <p class="gate-label">Verification 1 of 3</p>
+        <h1 class="gate-question">Who's your best ANIMAL friend?</h1>
+        <button class="btn btn-primary" id="toScreen2">Continue</button>
+      </div>
+
+      <!-- Screen 2: The Answer -->
+      <form class="gate-screen" id="screen2" hidden autocomplete="off">
+        <p class="gate-label">Verification 2 of 3</p>
+        <h2 class="gate-sub">Speak the name.</h2>
+        <input type="password" id="answerInput" class="gate-input" placeholder="Your answer" autocomplete="off" autocapitalize="off" spellcheck="false" />
+        <p class="gate-error" id="err2" role="alert"></p>
+        <button type="submit" class="btn btn-primary">Verify</button>
+      </form>
+
+      <!-- Screen 3: The PIN -->
+      <form class="gate-screen" id="screen3" hidden autocomplete="off">
+        <p class="gate-label">Verification 3 of 3</p>
+        <h2 class="gate-sub">Enter the PIN.</h2>
+        <input type="password" id="pinInput" class="gate-input" inputmode="numeric" pattern="[0-9]*" placeholder="PIN" autocomplete="off" />
+        <p class="gate-error" id="err3" role="alert"></p>
+        <button type="submit" class="btn btn-primary">Unlock</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ APP (hidden until unlocked) ============ -->
+  <main id="app" class="app" hidden>
+    <header class="topbar">
+      <h1 class="title">X-Cloud</h1>
+      <div class="topbar-right">
+        <div class="nexus" id="nexusIndicator" title="X-Nexus link status">
+          <span class="nexus-dot"></span>
+          <span class="nexus-text">X-Nexus: Linked</span>
+        </div>
+        <button class="btn btn-ghost" id="lockBtn"><span class="emoji">🔒</span> Lock</button>
+      </div>
+    </header>
+
+    <section class="meter">
+      <div class="meter-row">
+        <span class="meter-label">Storage</span>
+        <span class="meter-text" id="meterText">0 GB of 5 GB used</span>
+      </div>
+      <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+    </section>
+
+    <nav class="crumbs" id="crumbs" aria-label="Path"></nav>
+
+    <section class="files" id="fileList" aria-label="Files and folders"></section>
+
+    <p class="status" id="statusLine"></p>
+
+    <footer class="actionbar">
+      <button class="btn btn-primary" id="uploadBtn"><span class="emoji">📄</span> Upload Text/File</button>
+      <button class="btn" id="folderBtn"><span class="emoji">📁</span> New Folder</button>
+      <button class="btn btn-danger" id="deleteBtn" disabled><span class="emoji">🗑️</span> Delete</button>
+      <input type="file" id="fileInput" multiple hidden
+        accept=".txt,.md,.json,.csv,.js,.ts,.py,.html,.css,.yml,.yaml,.xml,.log,.sh,text/*,application/json" />
+    </footer>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
