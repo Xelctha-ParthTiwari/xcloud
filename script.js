@@ -32,12 +32,13 @@ import {
 
 /* ---------- PASTE FIREBASE CONFIG HERE ---------- */
 const FIREBASE_CONFIG = {
-  apiKey:            "YOUR_API_KEY",
-  authDomain:        "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId:         "YOUR_PROJECT_ID",
-  storageBucket:     "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId:             "YOUR_APP_ID"
+  apiKey:            "AIzaSyD--S4YUXhdEMkhbF3aVEFyJKlrEjc6uyo",
+  authDomain:        "x-cloud-861c4.firebaseapp.com",
+  projectId:         "x-cloud-861c4",
+  storageBucket:     "x-cloud-861c4.firebasestorage.app",
+  messagingSenderId: "438419226138",
+  appId:             "1:438419226138:web:d2301ee7a18f2787f19ba3",
+  measurementId:     "G-3Z1SXGHW26"
 };
 /* ------------------------------------------------ */
 
